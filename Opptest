@@ -1,5 +1,5 @@
 describe('Check for opportunities', () => {
-  it('Should go to careers page, search for Automation gobally and locally, then validate the results', async () => {
+  it('Should go to careers page, search for Automation gobally and locally, and validate the results', async () => {
      browser.url('http://10clouds.com')
      const careers = await $('//*[text()="Careers"]')
 	careers.waitForExist()
