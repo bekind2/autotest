@@ -1,33 +1,37 @@
 describe('Check for opportunities', () => {
   it('Should go to careers page, search for Automation gobally and locally, then validate the results', async () => {
-     browser.url('https://10clouds.com')
-     browser.$('//*[contains(text(), "Careers"]').click() // Open Careers page by text
-     const searchfor= $('search-job')
+     browser.url('http://10clouds.com')
+     const careers = await $('//*[text()="Careers"]')
+	careers.waitForExist()
+	careers.click()
+	const searchfor= await $('search-job')
      searchfor.waitForExist()
      searchfor.setValue('Automation') //fill search box
-     const button2 = $('Buttons__StyledButton-ellota-0 kOZrQm')   // Global Button selector
+     const button2 = await $('Buttons__StyledButton-ellota-0 kOZrQm')   // Global Button selector
      button2.waitForExist()
      button2.click()
-     const Results= $('#job-offers-section > div.job-offers__wrapper > a:nth-child(1)').getText() // 'Automation' Validation via xpath for one result
-     const element = $('#job-offers-section > div.job-offers__wrapper > a:nth-child(1)')
+     const Results= await $('#job-offers-section > div.job-offers__wrapper > a > span > div.job-offer__column-left > h2').getText() // 'Automation' Validation via xpath for one result
+     const element = await $('#job-offers-section > div.job-offers__wrapper > a > span > div.job-offer__column-left > h2')
      element.waitForExist()
      expect(element).toHaveTextContaining('Automation')   //   'Automation' validation via xpath for the results
      await !expect(element).toHaveChildren() //   Expecting only one result
 
-     browser.url('https://10clouds.com')
-           browser.$('//*[contains(text(), "Careers"]').click()  // Open Careers page by text
-           const rolesSearch = $('search-job')
-           rolesSearch.waitForExist()
-           rolesSearch.setValue('Automation') // fill search box
-           const button1 = $('Buttons__StyledButton-ellota-0 gKrBxG') // Global Button selector
+
+ browser.url('https://10clouds.com')
+           careers.waitForExist()
+	  careers.click()   // Open Careers page by text
+           const rolesSearch = await $('search-job')
+           searchfor.waitForExist()
+     searchfor.setValue('Automation') //fill search box
+           const button1 = await $('Buttons__StyledButton-ellota-0 gKrBxG') // Global Button selector
            button1.waitForExist()
            button1.click()
-           const Results2 = $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2)').getText()
-           const element2 = $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2)')
+           const Results2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2').getText()
+           const element2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2')
            element2.waitForExist()
             expect(element2).toHaveTextContaining('Automation') //  Automation validation via xpath for the results
            element.waitForExist()
            expect(element).toHaveTextContaining('Automation')
-
+     
 });
 });
