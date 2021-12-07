@@ -1,7 +1,7 @@
 describe('Check for opportunities', () => {
-  it('Should go to carrers page, search for Automation gobally and locally and validate the results', async () => {
+  it('Should go to careers page, search for Automation gobally and locally, then validate the results', async () => {
      browser.url('https://10clouds.com')
-     browser.$('//*[contains(text(), "Careers"]').click() // Open Carrers by text
+     browser.$('//*[contains(text(), "Careers"]').click() // Open Careers page by text
      const searchfor= $('search-job')
      searchfor.waitForExist()
      searchfor.setValue('Automation') //fill search box
