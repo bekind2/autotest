@@ -15,7 +15,7 @@ describe('Check for opportunities', () => {
      await !expect(element).toHaveChildren() //   Expecting only one result
 
      browser.url('https://10clouds.com')
-           browser.$('//*[contains(text(), "Careers"]').click()  // Open Carrers button
+           browser.$('//*[contains(text(), "Careers"]').click()  // Open Careers page by text
            const rolesSearch = $('search-job')
            rolesSearch.waitForExist()
            rolesSearch.setValue('Automation') // fill search box
