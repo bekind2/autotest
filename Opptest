@@ -13,7 +13,7 @@ describe('Check for opportunities', () => {
      const Results1= await $('#job-offers-section > div.job-offers__wrapper > a > span > div.job-offer__column-left > h2').getText() // 'Automation' Validation via xpath for one result
      const element1 = await $('#job-offers-section > div.job-offers__wrapper > a > span > div.job-offer__column-left > h2')
      element1.waitForExist()
-     expect(element1).toHaveTextContaining('Automation')   //   'Automation' validation via xpath for the results
+     expect(element1).toHaveTextContaining('Automation')   //   'Automation' validation  for the results
      await !expect(element1).toHaveChildren() //   Expecting only one result
 
 
@@ -28,7 +28,7 @@ describe('Check for opportunities', () => {
            const Results2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2').getText()
            const element2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2')
            element2.waitForExist()
-            expect(element2).toHaveTextContaining('Automation') //  Automation validation via xpath for the results
+            expect(element2).toHaveTextContaining('Automation') //  Automation validation for the results
            element1.waitForExist()
            expect(element1).toHaveTextContaining('Automation')
      
