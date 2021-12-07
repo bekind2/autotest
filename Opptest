@@ -4,7 +4,7 @@ describe('Check for opportunities', () => {
      const careers = await $('//*[text()="Careers"]')
 	careers.waitForExist()
 	careers.click()
-	const searchfor= await $('search-job')
+	const searchfor= await $('#search-job')
      searchfor.waitForExist()
      searchfor.setValue('Automation') //fill search box
      const button2 = await $('Buttons__StyledButton-ellota-0 kOZrQm')   // Global Button selector
@@ -23,7 +23,7 @@ describe('Check for opportunities', () => {
            const rolesSearch = await $('search-job')
            searchfor.waitForExist()
      searchfor.setValue('Automation') //fill search box
-           const button1 = await $('Buttons__StyledButton-ellota-0 gKrBxG') // Global Button selector
+           const button1 = await $('Buttons__StyledButton-ellota-0 gKrBxG') // Local Button selector
            button1.waitForExist()
            button1.click()
            const Results2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2').getText()
