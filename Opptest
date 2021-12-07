@@ -4,9 +4,9 @@ describe('Check for opportunities', () => {
      const careers = await $('//*[text()="Careers"]')
 	careers.waitForExist()
 	careers.click()
-	const searchfor= await $('#search-job')
-     searchfor.waitForExist()
-     searchfor.setValue('Automation') //fill search box
+	const searchFor= await $('#search-job')
+     searchFor.waitForExist()
+     searchFor.setValue('Automation') //fill search box
      const button1 = await $('Buttons__StyledButton-ellota-0 kOZrQm')   // Global Button selector
      button1.waitForExist()
      button1.click()
@@ -20,9 +20,8 @@ describe('Check for opportunities', () => {
  browser.url('https://10clouds.com')
            careers.waitForExist()
 	  careers.click()   // Open Careers page by text
-           const rolesSearch = await $('search-job')
-           searchfor.waitForExist()
-     searchfor.setValue('Automation') //fill search box
+           searchFor.waitForExist()
+     searchFor.setValue('Automation') //fill search box
            const button2 = await $('Buttons__StyledButton-ellota-0 gKrBxG') // Local Button selector
            button2.waitForExist()
            button2.click()
