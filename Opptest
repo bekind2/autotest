@@ -28,10 +28,12 @@ describe('Check for opportunities', () => {
         button2.click()
         const Results2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2').getText() // text for validation 
 	const element2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2')
-        element2.waitForExist()
+	const Results3 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(1) > span > div.job-offer__column-left > h2).getText() // text for validation 
+	const element3 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(1) > span > div.job-offer__column-left > h2')  
+	element2.waitForExist()
         expect(element2).toHaveTextContaining('Automation') //  Automation validation for the results
-        element1.waitForExist()
-        expect(element1).toHaveTextContaining('Automation')
+        element3.waitForExist()
+        expect(element3).toHaveTextContaining('Automation')
      
 });
 });
