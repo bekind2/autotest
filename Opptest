@@ -4,13 +4,13 @@ describe('Check for opportunities', () => {
      const careers = await $('//*[text()="Careers"]')
 	careers.waitForExist()
 	careers.click()     				// open careers page by text
-	const searchFor= await $('#search-job')
+	const searchFor = await $('#search-job')
      searchFor.waitForExist()
      searchFor.setValue('Automation') // fill in the search box
      const button1 = await $('Buttons__StyledButton-ellota-0 kOZrQm')   // Global Button selector
      button1.waitForExist()
      button1.click()
-     const Results1= await $('#job-offers-section > div.job-offers__wrapper > a > span > div.job-offer__column-left > h2').getText() // text for validation
+     const Results1 = await $('#job-offers-section > div.job-offers__wrapper > a > span > div.job-offer__column-left > h2').getText() // text for validation
      
      const element1 = await $('#job-offers-section > div.job-offers__wrapper > a > span > div.job-offer__column-left > h2')
      element1.waitForExist()
