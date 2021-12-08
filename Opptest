@@ -7,9 +7,9 @@ describe('Check for opportunities', () => {
 	const searchFor = await $('#search-job')
      searchFor.waitForExist()
      searchFor.setValue('Automation') // fill in the search box
-     const button1 = await $('Buttons__StyledButton-ellota-0 kOZrQm')   // per the task there should be only one result for Automation Engineer on 
-     button1.waitForExist()						// the Careers page, but there's more then one. 
-     button1.click()							// Interacting with search box and buttons to make it pass
+     const button1 = await $('Buttons__StyledButton-ellota-0 kOZrQm')   	// Global button selector. Per the task there should be only one result 
+     button1.waitForExist()							// for Automation Engineer on the Careers page, but there's more then one. 
+     button1.click()								// Interacting with search box and buttons to make it pass
      const Results1 = await $('#job-offers-section > div.job-offers__wrapper > a > span > div.job-offer__column-left > h2').getText() // text for validation
      
      const element1 = await $('#job-offers-section > div.job-offers__wrapper > a > span > div.job-offer__column-left > h2')
