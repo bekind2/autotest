@@ -1,12 +1,12 @@
 describe('Check for opportunities', () => {
-  it('Should go to the careers page, search for Automation gobally and locally, and validate the results', async () => {
+  it('Should go to the careers page, search for Automation globally and locally, with the validation of the results', async () => {
      browser.url('http://10clouds.com')
      const careers = await $('//*[text()="Careers"]')
 	careers.waitForExist()
 	careers.click()     				// open careers page by text
 	const searchFor= await $('#search-job')
      searchFor.waitForExist()
-     searchFor.setValue('Automation') //fill search box
+     searchFor.setValue('Automation') // fill in the search box
      const button1 = await $('Buttons__StyledButton-ellota-0 kOZrQm')   // Global Button selector
      button1.waitForExist()
      button1.click()
@@ -18,19 +18,18 @@ describe('Check for opportunities', () => {
 
 
  browser.url('https://10clouds.com')
-           careers.waitForExist()
-	  careers.click()   // Open Careers page by text
-           searchFor.waitForExist()
-     searchFor.setValue('Automation') //fill search box
-           const button2 = await $('Buttons__StyledButton-ellota-0 gKrBxG') // Local Button selector
-           button2.waitForExist()
-           button2.click()
-           const Results2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2').getText()
-           const element2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2')
-           element2.waitForExist()
-            expect(element2).toHaveTextContaining('Automation') //  Automation validation for the results
-           element1.waitForExist()
-           expect(element1).toHaveTextContaining('Automation')
+        careers.waitForExist()
+	careers.click()   // Open Careers page by text
+        searchFor.waitForExist()
+     	searchFor.setValue('Automation') // fill in the search box
+     	const button2 = await $('Buttons__StyledButton-ellota-0 gKrBxG') // Local Button selector
+        button2.waitForExist()
+        button2.click()
+        const Results2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2').getText() // text for validation            const element2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2')
+        element2.waitForExist()
+        expect(element2).toHaveTextContaining('Automation') //  Automation validation for the results
+        element1.waitForExist()
+        expect(element1).toHaveTextContaining('Automation')
      
 });
 });
