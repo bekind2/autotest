@@ -1,6 +1,6 @@
 describe('Check for opportunities', () => {
   it('Should go to the careers page, search for Automation globally and locally, with the validation of the results', async () => {
-     browser.url('http://10clouds.com')
+     browser.url('https://10clouds.com')
      const careers = await $('//*[text()="Careers"]')
 	careers.waitForExist()
 	careers.click()     				// open careers page by text
@@ -17,7 +17,7 @@ describe('Check for opportunities', () => {
      await !expect(element1).toHaveChildren() //   Expecting only one result
 
 
- browser.url('http://10clouds.com')
+ browser.url('https://10clouds.com')
         careers.waitForExist()
 	careers.click()   // Open Careers page by text
         searchFor.waitForExist()
