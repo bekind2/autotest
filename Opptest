@@ -10,7 +10,8 @@ describe('Check for opportunities', () => {
      const button1 = await $('Buttons__StyledButton-ellota-0 kOZrQm')   // Global Button selector
      button1.waitForExist()
      button1.click()
-     const Results1= await $('#job-offers-section > div.job-offers__wrapper > a > span > div.job-offer__column-left > h2').getText() // text for validation 
+     const Results1= await $('#job-offers-section > div.job-offers__wrapper > a > span > div.job-offer__column-left > h2').getText() // text for validation
+     
      const element1 = await $('#job-offers-section > div.job-offers__wrapper > a > span > div.job-offer__column-left > h2')
      element1.waitForExist()
      expect(element1).toHaveTextContaining('Automation')   //   'Automation' validation  for the results
@@ -25,7 +26,8 @@ describe('Check for opportunities', () => {
      	const button2 = await $('Buttons__StyledButton-ellota-0 gKrBxG') // Local Button selector
         button2.waitForExist()
         button2.click()
-        const Results2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2').getText() // text for validation            const element2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2')
+        const Results2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2').getText() // text for validation 
+	const element2 = await $('#job-offers-section > div.job-offers__wrapper > a:nth-child(2) > span > div.job-offer__column-left > h2')
         element2.waitForExist()
         expect(element2).toHaveTextContaining('Automation') //  Automation validation for the results
         element1.waitForExist()
