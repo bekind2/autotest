@@ -17,7 +17,7 @@ describe('Check for opportunities', () => {
      await !expect(element1).toHaveChildren() //   Expecting only one result
 
 
- browser.url('https://10clouds.com')
+ browser.url('http://10clouds.com')
         careers.waitForExist()
 	careers.click()   // Open Careers page by text
         searchFor.waitForExist()
